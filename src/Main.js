@@ -5,12 +5,12 @@ import gsap from 'gsap'
 
 function Main() {
 
-    const wrapper = useRef(null);
+    const mainWrapper = useRef(null);
 
     useEffect(() => {
 
-        const virus1 = wrapper.current.children[0];
-        const virus2 = wrapper.current.children[1];
+        const virus1 = mainWrapper.current.children[0];
+        const virus2 = mainWrapper.current.children[1];
 
         gsap.set([virus1, virus2], {authoAlpha: 0});
 
@@ -25,7 +25,7 @@ function Main() {
         <div className='main'>
             <h1>Covid Tracker</h1>
             <div className='button'>Get Started</div>
-            <div ref={wrapper}>
+            <div ref={mainWrapper}>
             <Virus1 id='virus1' />
             <Virus2 id='virus2' />
             </div>
