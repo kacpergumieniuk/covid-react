@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from 'react'
 import {ReactComponent as Virus} from './images/virus2.svg'
 import { BiSearchAlt } from "react-icons/bi";
+import { BiLeftArrowAlt } from "react-icons/bi";
 import gsap from 'gsap'
 
 
 
-function Searching() {
+function Searching({goToSearch}) {
 
     const virus3ref = useRef(null);
 
@@ -24,6 +25,7 @@ function Searching() {
                 <BiSearchAlt id='search-icon' />
             </div>
             <Virus id='virus3' ref={virus3ref}/>
+            <BiLeftArrowAlt className='arrow-back' onClick={goToSearch} />
             
         </div>
     )
