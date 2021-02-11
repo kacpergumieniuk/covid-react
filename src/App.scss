@@ -10,8 +10,13 @@
   font-family: myriad-pro, sans-serif;
 }
 
+html,
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
 
 .link {
@@ -46,7 +51,7 @@ body {
 
   #virus1 {
     position: absolute;
-    bottom: -2%;
+    bottom: 0%;
     left: calc(100% - 130px);
   }
 

@@ -7,7 +7,7 @@ import {useState} from 'react'
 
 function App() {
 
-  const [mainActive , setMainActive] = useState(false);
+  const [mainActive , setMainActive] = useState(true);
   const [searchingActive, setSearchingActive] = useState(false);
   
   function toggleMainSearch() {
