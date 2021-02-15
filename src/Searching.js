@@ -6,7 +6,7 @@ import gsap from 'gsap'
 
 
 
-function Searching({goToMain , goToResults, countries, setCountryName}) {
+function Searching({goToMain , goToResults, countries, setCountryName, setTotalCases, setTotalDeaths, setTotalRecovered}) {
 
     const virus3ref = useRef(null);
 
@@ -24,7 +24,7 @@ function Searching({goToMain , goToResults, countries, setCountryName}) {
             <h2>Search for a desired country</h2>
             <div className='input-box'>
                 <input type='text' onChange={event => setSearchTerm(event.target.value)}></input>
-                <BiSearchAlt id='search-icon' onClick={goToResults} />
+                <BiSearchAlt id='search-icon' />
             </div>
             <div className='suggestions'>
             {countries.filter((val) => {
@@ -38,12 +38,21 @@ function Searching({goToMain , goToResults, countries, setCountryName}) {
 
             }).map((val, key) => {
                 return (
-                    <div key={key}>{val.Country}</div>
+                    <div key={key} onClick={() => 
+                        {
+                            setCountryName(val.Country)
+                            setTotalCases(val.TotalConfirmed)
+                            setTotalDeaths(val.TotalDeaths)
+                            setTotalRecovered(val.TotalRecovered)
+                            goToResults();
+                        }
+                        
+                       }>{val.Country}</div>
                 )
             })} 
             </div>
             <Virus id='virus3' ref={virus3ref} />
-            <BiLeftArrowAlt className='arrow-back' onClick={goToMain}/>
+            <BiLeftArrowAlt className='arrow-back' onClick={goToMain} />
            
         </div>
     )

@@ -12,6 +12,9 @@ function App() {
 
   const [page, setPage] = useState('MAIN');
   const [countryName, setCountryName] = useState('Giet');
+  const [totalCases, setTotalCases] = useState(2133);
+  const [totalDeaths, setTotalDeaths] = useState(2133);
+  const [totalRecovered, setTotalRecovered] = useState(2133)
   
 
   useEffect(() => {
@@ -23,11 +26,7 @@ function App() {
               })
   }, [])
 
-    function setNameInResults (name) {
-      setCountryName(name)
-    }
-  
-
+    
   if(page === 'MAIN'){
     return <Main
      goToSearch={() => setPage('SEARCHING')} />
@@ -38,13 +37,21 @@ function App() {
      goToMain={() => setPage('MAIN')}
      goToResults={() => setPage('RESULTS')}
      countries={allCountries}
+     setCountryName={setCountryName}
+     setTotalCases={setTotalCases}
+     setTotalDeaths={setTotalDeaths}
+     setTotalRecovered={setTotalRecovered}
     />
   }
 
   if(page === 'RESULTS'){
     return <Results
      goToSearch={() => setPage('SEARCHING')}
-     countryName={countryName} />
+     countryName={countryName}
+     totalCases={totalCases}
+     totalDeaths={totalDeaths}
+     totalRecovered={totalRecovered} />
+     
   }
 
 

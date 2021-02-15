@@ -3,7 +3,7 @@ import { BiLeftArrowAlt } from "react-icons/bi";
 import {ReactComponent as Virus} from './images/virus2.svg'
 import gsap from 'gsap'
 
-function Results({ goToSearch, countryName }) {
+function Results({ goToSearch, countryName, totalCases, totalDeaths, totalRecovered }) {
 
     const virus4ref = useRef(null);
 
@@ -20,13 +20,13 @@ function Results({ goToSearch, countryName }) {
             <h2>{countryName}</h2>
             
             <h3>Total cases</h3>
-            <p>2222222</p>
+            <p>{totalCases}</p>
 
             <h3>Total deaths</h3>
-            <p>2222222</p>
+            <p>{totalDeaths}</p>
 
             <h3>Total recovered</h3>
-            <p>2222222</p>
+            <p>{totalRecovered}</p>
             
             <BiLeftArrowAlt className='arrow-back' onClick={goToSearch}/ >
             <Virus id='virus4' ref={virus4ref}/>
