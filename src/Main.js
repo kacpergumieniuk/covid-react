@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import Searching from './'
+
 import {ReactComponent as Virus1} from './images/virus1.svg'
 import {ReactComponent as Virus2} from './images/virus2.svg'
 import gsap from 'gsap'

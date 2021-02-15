@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import {ReactComponent as Virus} from './images/virus2.svg'
 import { BiSearchAlt } from "react-icons/bi";
 import { BiLeftArrowAlt } from "react-icons/bi";
@@ -6,7 +6,7 @@ import gsap from 'gsap'
 
 
 
-function Searching({goToSearch}) {
+function Searching({goToMain , goToResults, countries, setCountryName}) {
 
     const virus3ref = useRef(null);
 
@@ -17,18 +17,53 @@ function Searching({goToSearch}) {
 
     }, [])
 
+    const [searchTerm, setSearchTerm] = useState('')
+
     return (
         <div className='searching'>
             <h2>Search for a desired country</h2>
             <div className='input-box'>
-                <input></input>
-                <BiSearchAlt id='search-icon' />
+                <input type='text' onChange={event => setSearchTerm(event.target.value)}></input>
+                <BiSearchAlt id='search-icon' onClick={goToResults} />
             </div>
-            <Virus id='virus3' ref={virus3ref}/>
-            <BiLeftArrowAlt className='arrow-back' onClick={goToSearch} />
-            
+            <div className='suggestions'>
+            {countries.filter((val) => {
+                if(searchTerm == ''){
+                    return ''
+                }
+                else if(val.Country.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
+                    return val
+                }
+
+
+            }).map((val, key) => {
+                return (
+                    <div key={key}>{val.Country}</div>
+                )
+            })} 
+            </div>
+            <Virus id='virus3' ref={virus3ref} />
+            <BiLeftArrowAlt className='arrow-back' onClick={goToMain}/>
+           
         </div>
     )
 }
 
 export default Searching
+
+
+
+/*{countries.filter((val) => {
+                if(searchTerm == ''){
+                    return ''
+                }
+                else if(val.Country.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
+                    return val
+                }
+
+
+            }).map((val, key) => {
+                return (
+                    <div key={key}>{val.Country}</div>
+                )
+            })}  */
