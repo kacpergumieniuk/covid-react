@@ -118,10 +118,11 @@ body {
 
   .suggestions {
     position: absolute;
-    max-height: 165px;
+
+    height: 165px;
     overflow-y: scroll;
     width: 200px;
-    bottom: 60px;
+    bottom: 40px;
 
     div {
       padding: 15px;
@@ -174,6 +175,9 @@ body {
   }
   .searching {
     background-image: url(./images/desktop-searching.svg);
+    .suggestions {
+      bottom: 70px;
+    }
   }
   .results {
     background-image: url(./images/desktop-main.svg);
