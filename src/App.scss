@@ -87,6 +87,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 
   h2 {
     font-size: 32px;
@@ -116,9 +117,11 @@ body {
   }
 
   .suggestions {
+    position: absolute;
     max-height: 165px;
     overflow-y: scroll;
     width: 200px;
+    bottom: 60px;
 
     div {
       padding: 15px;
@@ -162,5 +165,17 @@ body {
   #virus4 {
     position: absolute;
     right: calc(100% - 200px);
+  }
+}
+
+@media (min-width: 700px) {
+  .main {
+    background-image: url(./images/desktop-main.svg);
+  }
+  .searching {
+    background-image: url(./images/desktop-searching.svg);
+  }
+  .results {
+    background-image: url(./images/desktop-main.svg);
   }
 }

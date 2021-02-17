@@ -11,10 +11,10 @@ let allCountries;
 function App() {
 
   const [page, setPage] = useState('MAIN');
-  const [countryName, setCountryName] = useState('Giet');
-  const [totalCases, setTotalCases] = useState(2133);
-  const [totalDeaths, setTotalDeaths] = useState(2133);
-  const [totalRecovered, setTotalRecovered] = useState(2133)
+  const [countryName, setCountryName] = useState('-');
+  const [totalCases, setTotalCases] = useState(0);
+  const [totalDeaths, setTotalDeaths] = useState(0);
+  const [totalRecovered, setTotalRecovered] = useState(0)
   
 
   useEffect(() => {
@@ -53,10 +53,6 @@ function App() {
      totalRecovered={totalRecovered} />
      
   }
-
-
-
-  
 
   return (
     <div className="App">

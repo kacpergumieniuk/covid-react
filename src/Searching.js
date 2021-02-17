@@ -24,7 +24,7 @@ function Searching({goToMain , goToResults, countries, setCountryName, setTotalC
             <h2>Search for a desired country</h2>
             <div className='input-box'>
                 <input type='text' onChange={event => setSearchTerm(event.target.value)}></input>
-                <BiSearchAlt id='search-icon' />
+                <BiSearchAlt id='search-icon'/>
             </div>
             <div className='suggestions'>
             {countries.filter((val) => {
@@ -34,8 +34,6 @@ function Searching({goToMain , goToResults, countries, setCountryName, setTotalC
                 else if(val.Country.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
                     return val
                 }
-
-
             }).map((val, key) => {
                 return (
                     <div key={key} onClick={() => 
@@ -46,7 +44,6 @@ function Searching({goToMain , goToResults, countries, setCountryName, setTotalC
                             setTotalRecovered(val.TotalRecovered)
                             goToResults();
                         }
-                        
                        }>{val.Country}</div>
                 )
             })} 

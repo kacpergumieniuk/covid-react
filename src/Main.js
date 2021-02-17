@@ -19,8 +19,6 @@ function Main({goToSearch}) {
         const virus1 = mainWrapper.current.children[0];
         const virus2 = mainWrapper.current.children[1];
 
-        
-
         const tl = gsap.timeline({defaults: {ease: 'power3.inOut'}});
 
         tl.fromTo(virus2, {x: '-=100%'}, {duration: 2, x: '+=100%'})
@@ -40,10 +38,6 @@ function Main({goToSearch}) {
             <Virus2 id='virus2' />
             </div>
         </div>
-
-        
-         
-          
         
     )
 }
